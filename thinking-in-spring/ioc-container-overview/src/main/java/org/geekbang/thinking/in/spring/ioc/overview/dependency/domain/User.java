@@ -18,6 +18,14 @@ public class User {
         this.name = name;
     }
 
+
+    public static User createInstance(){
+        User newUser=new User();
+        newUser.setId(4L);
+        newUser.setName("小马哥");
+        return newUser;
+    }
+
     @Override
     public String toString() {
         return "User{" +
