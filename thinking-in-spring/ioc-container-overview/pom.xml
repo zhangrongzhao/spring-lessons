@@ -11,17 +11,17 @@
 
     <artifactId>ioc-container-overview</artifactId>
 
-    <properties>
-        <spring.version>5.2.7.RELEASE</spring.version>
-    </properties>
+<!--    <properties>-->
+<!--        <spring.version>5.2.7.RELEASE</spring.version>-->
+<!--    </properties>-->
 
-    <dependencies>
-        <!-- spring ioc container 核心容器-->
-        <dependency>
-            <groupId>org.springframework</groupId>
-            <artifactId>spring-context</artifactId>
-            <version>${spring.version}</version>
-        </dependency>
-    </dependencies>
+<!--    <dependencies>-->
+<!--        &lt;!&ndash; spring ioc container 核心容器&ndash;&gt;-->
+<!--        <dependency>-->
+<!--            <groupId>org.springframework</groupId>-->
+<!--            <artifactId>spring-context</artifactId>-->
+<!--            <version>${spring.version}</version>-->
+<!--        </dependency>-->
+<!--    </dependencies>-->
 
 </project>
