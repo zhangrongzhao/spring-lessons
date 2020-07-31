@@ -5,10 +5,10 @@ import org.springframework.beans.factory.xml.XmlBeanDefinitionReader;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.annotation.Bean;
 
-public class AnnotationDependencyInjectionDemo {
+public class AnnotationDependencySetterInjectionDemo {
     public static void main(String[] args){
         AnnotationConfigApplicationContext applicationContext = new AnnotationConfigApplicationContext();
-        applicationContext.register(AnnotationDependencyInjectionDemo.class);
+        applicationContext.register(AnnotationDependencySetterInjectionDemo.class);
 
         XmlBeanDefinitionReader reader = new XmlBeanDefinitionReader(applicationContext);
         String xmlResourcePath="classpath:/META-INF/dependency-lookup-context.xml";

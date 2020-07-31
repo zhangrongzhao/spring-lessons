@@ -11,7 +11,7 @@ import org.springframework.context.annotation.Bean;
 /*
 * 使用API进行依赖注入示例
 * */
-public class ApiDependencyInjectionDemo {
+public class ApiDependencySetterInjectionDemo {
     public static void main(String[] args){
         AnnotationConfigApplicationContext applicationContext = new AnnotationConfigApplicationContext();
         //applicationContext.register(AnnotationDependencyInjectionDemo.class);
