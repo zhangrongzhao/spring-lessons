@@ -25,7 +25,6 @@ public class DefaultUserFactory implements UserFactory, InitializingBean, Dispos
         System.out.println("3.fourth step:自定义初始化方法：customInitUserFactory...");
     }
 
-
     @PreDestroy
     public void preDestroy(){
         System.out.println("4.preDestroy step:准备销毁...");

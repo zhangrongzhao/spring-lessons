@@ -14,9 +14,9 @@ public class ObjectProviderDemo {
         AnnotationConfigApplicationContext applicationContext = new AnnotationConfigApplicationContext();
         applicationContext.register(ObjectProviderDemo.class);
         applicationContext.refresh();
-        //lookupByObjectProvider(applicationContext);
+        lookupByObjectProvider(applicationContext);
         //lookupIfAvailable(applicationContext);
-        lookupByStreamOps(applicationContext);
+        //lookupByStreamOps(applicationContext);
         applicationContext.close();
     }
 
@@ -42,7 +42,6 @@ public class ObjectProviderDemo {
     }
 
     @Bean
-    @Primary
     public String helloworld(){//没有显示命名BeanName，则方法名称就是beanName="helloworld"
          return  "hello,world!";
     }
@@ -51,4 +50,7 @@ public class ObjectProviderDemo {
     public String message(){
         return "message";
     }
+
+    @Bean
+    public String bean1(){ return "bean1";}
 }
