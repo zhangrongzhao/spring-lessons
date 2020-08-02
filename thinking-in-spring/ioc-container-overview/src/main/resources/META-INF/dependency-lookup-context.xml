@@ -6,6 +6,16 @@
     <bean id="user"  class="org.geekbang.thinking.in.spring.ioc.overview.dependency.domain.User">
         <property name="id" value="1"></property>
         <property name="name" value="小马哥"></property>
+        <property name="city" value="BEIJING"></property>
+        <property name="configFileLocation" value="classpath:/META-INF/user-config.properties"></property>
+        <property name="workCities" value="BEIJING,SHANGHAI"></property>
+        <property name="lifeCities">
+            <list>
+                <value>BEIJING</value>
+                <value>SHANGHAI</value>
+                <value>HANGZHOU</value>
+            </list>
+        </property>
     </bean>
 
     <bean id="superUser" class="org.geekbang.thinking.in.spring.ioc.overview.dependency.domain.SuperUser" primary="true"  parent="user">
