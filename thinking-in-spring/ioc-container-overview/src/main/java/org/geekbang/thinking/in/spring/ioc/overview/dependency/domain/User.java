@@ -1,18 +1,24 @@
 package org.geekbang.thinking.in.spring.ioc.overview.dependency.domain;
 
 import org.geekbang.thinking.in.spring.ioc.overview.dependency.enums.City;
+import org.springframework.beans.factory.BeanNameAware;
+import org.springframework.beans.factory.DisposableBean;
+import org.springframework.beans.factory.InitializingBean;
 import org.springframework.core.io.Resource;
 
+import javax.annotation.PostConstruct;
+import javax.annotation.PreDestroy;
 import java.util.Arrays;
 import java.util.List;
 
-public class User {
+public class User implements InitializingBean, DisposableBean, BeanNameAware {
     private Long id;
     private String name;
     private City city;
     private Resource configFileLocation;
     private City[] workCities;
     private List<City> lifeCities;
+    private transient String beanName;
 
     public List<City> getLifeCities() {
         return lifeCities;
@@ -75,5 +81,29 @@ public class User {
                 ", workCities=" + Arrays.toString(workCities) +
                 ", lifeCities=" + lifeCities +
                 '}';
+    }
+
+//    @PostConstruct
+//    public void init(){
+//        System.out.println("用户对象初始化...");
+//    }
+
+    @Override
+    public void afterPropertiesSet() throws Exception {
+        System.out.println("user bean["+this.beanName+"]初始化...");
+    }
+
+
+    @Override
+    public void destroy(){
+        System.out.println("user bean["+this.beanName+"]销毁中...");
+    }
+
+    @Override
+    public void setBeanName(String name) {
+        this.beanName = name;
+    }
+    public String getBeanName() {
+        return beanName;
     }
 }
