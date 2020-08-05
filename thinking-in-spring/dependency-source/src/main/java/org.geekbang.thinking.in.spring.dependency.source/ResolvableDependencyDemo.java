@@ -4,7 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.config.ConfigurableListableBeanFactory;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
-import javax.annotation.PostConstruct;
+//import javax.annotation.PostConstruct;
 
 /**
  * ResolvableDependency 作为依赖注入来源
@@ -14,7 +14,7 @@ public class ResolvableDependencyDemo {
     @Autowired
     private String helloWorld;
 
-    @PostConstruct
+    //@PostConstruct
     public void initByInjection(){
         System.out.println(this+"helloWorld="+helloWorld);
     }

@@ -4,7 +4,7 @@ import org.springframework.beans.factory.InitializingBean;
 import org.springframework.beans.factory.support.BeanDefinitionBuilder;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
-import javax.annotation.PostConstruct;
+//import javax.annotation.PostConstruct;
 
 public class BeanCreationExceptionDemo {
     public static void main(String[] args){
@@ -18,7 +18,7 @@ public class BeanCreationExceptionDemo {
     }
 
     public static class Pojo implements InitializingBean{
-        @PostConstruct /*CommonAnnotationBeanPostProcessor*/
+        //@PostConstruct /*CommonAnnotationBeanPostProcessor*/
         public void postConstruct() throws Exception {
             throw new Exception("postConstruct: ...For purpose... ");
         }

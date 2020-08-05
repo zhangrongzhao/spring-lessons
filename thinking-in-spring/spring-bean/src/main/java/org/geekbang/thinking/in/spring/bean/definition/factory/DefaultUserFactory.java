@@ -3,8 +3,8 @@ package org.geekbang.thinking.in.spring.bean.definition.factory;
 import org.springframework.beans.factory.DisposableBean;
 import org.springframework.beans.factory.InitializingBean;
 
-import javax.annotation.PostConstruct;
-import javax.annotation.PreDestroy;
+//import javax.annotation.PostConstruct;
+//import javax.annotation.PreDestroy;
 
 public class DefaultUserFactory implements UserFactory, InitializingBean, DisposableBean {
 
@@ -13,7 +13,7 @@ public class DefaultUserFactory implements UserFactory, InitializingBean, Dispos
     }
 
     //1.基于 @PostConstruct 注解实现
-    @PostConstruct
+    //@PostConstruct
     public void postConstruct(){
         System.out.println("1.second step:@PostConstruct : userFactory 实例化后置初始化");
     }
@@ -25,7 +25,7 @@ public class DefaultUserFactory implements UserFactory, InitializingBean, Dispos
         System.out.println("3.fourth step:自定义初始化方法：customInitUserFactory...");
     }
 
-    @PreDestroy
+    //@PreDestroy
     public void preDestroy(){
         System.out.println("4.preDestroy step:准备销毁...");
     }

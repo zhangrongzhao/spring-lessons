@@ -6,7 +6,7 @@ import org.springframework.beans.factory.xml.XmlBeanDefinitionReader;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.annotation.Bean;
 
-import javax.annotation.Resource;
+//import javax.annotation.Resource;
 /*
 * 基于java注解的方法依赖注入
 * */
@@ -19,7 +19,7 @@ public class AnnotationDependencyMethodInjectionDemo {
         this.userHolder1=userHolder1;
     }
 
-    @Resource
+    //@Resource
     public void init2(UserHolder userHolder2){
         this.userHolder2=userHolder2;
     }

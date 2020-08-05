@@ -9,7 +9,7 @@ import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.core.io.ResourceLoader;
 
-import javax.annotation.PostConstruct;
+//import javax.annotation.PostConstruct;
 
 /**
  * 依赖来源示例
@@ -29,7 +29,7 @@ public class DependencySourceDemo {
     @Autowired
     private ApplicationContext applicationContext;
 
-    @PostConstruct
+    //@PostConstruct
     public void initByInjection(){
         System.out.println("beanFactory=" + beanFactory);
         System.out.println("resourceLoader=" + resourceLoader);
@@ -37,7 +37,7 @@ public class DependencySourceDemo {
         System.out.println("applicationContext=" + applicationContext);
     }
 
-    @PostConstruct
+    //@PostConstruct
     public void initByLookup(){
         getBean(BeanFactory.class);
         getBean(ResourceLoader.class);

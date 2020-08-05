@@ -7,14 +7,14 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ImportResource;
 
-import javax.annotation.Resource;
+//import javax.annotation.Resource;
 
 public class AnnotationDependencyFieldInjectionDemo {
 
     @Autowired  /* Autowired 会忽略掉静态字段*/
     private UserHolder userHolder;
 
-    @Resource
+    //@Resource
     private UserHolder userHolder2;
 
 
