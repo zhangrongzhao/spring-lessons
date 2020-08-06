@@ -16,7 +16,13 @@ public class ThreadLocalScopeDemo {
     @Bean
     @Scope(ThreadLocalScope.SCOPE_NAME)
     public User user() {
-        return User.createInstance();
+        return createUser();
+    }
+
+    private static User createUser() {
+        User user = new User();
+        user.setId(System.nanoTime());
+        return user;
     }
 
     public static void main(String[] args) throws InterruptedException {
@@ -36,8 +42,15 @@ public class ThreadLocalScopeDemo {
 
     private static void customScopedBeansByInjection(AnnotationConfigApplicationContext applicationContext) throws InterruptedException {
         for (int i = 0; i < 5; i++) {
+            User user = applicationContext.getBean(User.class);
+            System.out.printf("Thread ["+Thread.currentThread().getId()+"]"+ user);
+            System.out.println();
+        }
+
+        for (int i = 0; i < 5; i++) {
             Thread thread=new Thread(()->{
-                System.out.printf("Thread ["+Thread.currentThread().getId()+"] demo.user[" + applicationContext.getBean(User.class).getBeanName() + "]:{hashCode：" + applicationContext.getBean(User.class).hashCode()+"}");
+                User user = applicationContext.getBean(User.class);
+                System.out.printf("Thread ["+Thread.currentThread().getId() +"]"+ user);
                 System.out.println();
             });
             thread.start();
