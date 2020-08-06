@@ -19,9 +19,12 @@ public class IndexController {
     @Autowired
     private User user;
 
-    @GetMapping("/index.html")
+    @GetMapping("/")
     public String index(Model model){
-        model.addAttribute("user",user);
+        //作用域范围： page->request->session->application
+        //ApplicationScope: User 对象存在， ServletContext上下文名称： scopedTarget.user==新生成的Bean名称
+        model.addAttribute("userObject",user);
+//        model.addAttribute("user",user);
         return "index";
     }
 }

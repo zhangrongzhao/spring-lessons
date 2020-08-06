@@ -9,10 +9,21 @@
 <html>
 <head>
     <title>Title</title>
+    <style type="text/css">
+        .align-center{
+            margin:0 auto;      /* 居中 这个是必须的，，其它的属性非必须 */
+            width:500px;        /* 给个宽度 顶到浏览器的两边就看不出居中效果了 */
+            background:red;     /* 背景色 */
+            text-align:center;  /* 文字等内容居中 */
+        }
+    </style>
 </head>
 <body>
-      <div style="height: 300px;width:300px;color: red;">
-            <h1>${user.name}</h1>
+      <div class="align-center" style="height: 500px;width:500px;">
+
+          <h1>\${userObject.name} : ${userObject.name}</h1>
+          <h1>\${applicationScope["scopedTarget.user"].name} : ${applicationScope["scopedTarget.user"].name}</h1>
+
       </div>
 </body>
 </html>
