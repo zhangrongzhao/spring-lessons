@@ -8,6 +8,9 @@
     <context:annotation-config/>
     <context:component-scan base-package="org.springframework"/>
 
+    <!--Root Bean Definition 不需要合并，不存在parent-->
+    <!--普通的BeanDefinition: GenericBeanDefinition-->
+    <!--经过合并后，GenericBeanDefinition 转变为 RootBeanDefinition-->
     <bean id="user"  class="org.geekbang.thinking.in.spring.ioc.overview.dependency.domain.User">
         <property name="id" value="1"></property>
         <property name="name" value="小马哥"></property>
@@ -22,7 +25,9 @@
             </list>
         </property>
     </bean>
-
+    <!--普通的BeanDefinition: GenericBeanDefinition-->
+    <!--合并后GenericBeanDefinition 变成 RootBeanDefinition,并且覆盖parent相关配置-->
+    <!--primary=true,增加了一个address属性-->
     <bean id="superUser" class="org.geekbang.thinking.in.spring.ioc.overview.dependency.domain.SuperUser" primary="true"  parent="user">
         <property name="address" value="北京"></property>
     </bean>
