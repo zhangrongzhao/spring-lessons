@@ -12,9 +12,11 @@
         <module name="ioc-container-overview" />
         <module name="dependency-lookup" />
         <module name="bean-scope" />
+        <module name="bean-lifecycle" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel target="11">
+      <module name="bean-lifecycle" target="11" />
       <module name="bean-scope" target="11" />
       <module name="dependency-injection" target="11" />
       <module name="dependency-lookup" target="11" />

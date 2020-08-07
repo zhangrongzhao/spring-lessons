@@ -10,6 +10,8 @@
     <option name="originalFiles">
       <list>
         <option value="$PROJECT_DIR$/thinking-in-spring/pom.xml" />
+        <option value="$PROJECT_DIR$/bean-lifecycle/pom.xml" />
+        <option value="$PROJECT_DIR$/thinking-in-spring/bean-lifecycle/pom.xml" />
       </list>
     </option>
   </component>
