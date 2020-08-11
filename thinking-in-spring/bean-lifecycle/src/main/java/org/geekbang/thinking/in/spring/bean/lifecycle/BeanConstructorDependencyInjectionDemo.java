@@ -2,11 +2,14 @@ package org.geekbang.thinking.in.spring.bean.lifecycle;
 
 import org.geekbang.thinking.in.spring.ioc.overview.dependency.domain.SuperUser;
 import org.geekbang.thinking.in.spring.ioc.overview.dependency.domain.User;
+import org.springframework.beans.BeansException;
+import org.springframework.beans.factory.config.InstantiationAwareBeanPostProcessor;
 import org.springframework.beans.factory.support.DefaultListableBeanFactory;
 import org.springframework.beans.factory.xml.XmlBeanDefinitionReader;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.core.io.Resource;
 import org.springframework.core.io.support.EncodedResource;
+import org.springframework.util.ObjectUtils;
 
 /**
  * BeanDefinition合并示例
@@ -15,6 +18,7 @@ public class BeanConstructorDependencyInjectionDemo {
     public static void main(String[] args) {
         //创建BeanFactory容器
         DefaultListableBeanFactory beanFactory = new DefaultListableBeanFactory();
+        beanFactory.addBeanPostProcessor(new MyInstantiationAwareBeanPostProcessor());
         //基于XML资源的BeanDefinitionReader
         XmlBeanDefinitionReader beanDefinitionReader = new XmlBeanDefinitionReader(beanFactory);
         String[] locations = {"/META-INF/dependency-lookup-context.xml", "META-INF/bean-constructor-dependency-injection.xml"};
@@ -24,14 +28,36 @@ public class BeanConstructorDependencyInjectionDemo {
         int beanDefinitionCount = beanDefinitionAfter - beanDefinitionBefore;
         System.out.println("加载的BeanDefinition数量：" + beanDefinitionCount);
 
-//        User user = beanFactory.getBean("user", User.class);
-//        System.out.println(user);
+        User user = beanFactory.getBean("user", User.class);
+        System.out.println(user);
 //
 //        SuperUser superUser = (SuperUser) beanFactory.getBean("superUser", User.class);
 //        System.out.println(superUser);
 
-        //构造器注入按照类型注入，resolveDependency
-        UserHolder userholder = beanFactory.getBean("userHolder", UserHolder.class);
-        System.out.println(userholder);
+//        //构造器注入按照类型注入，resolveDependency
+//        UserHolder userholder = beanFactory.getBean("userHolder", UserHolder.class);
+//        System.out.println(userholder);
+    }
+
+    static class MyInstantiationAwareBeanPostProcessor implements InstantiationAwareBeanPostProcessor {
+        @Override
+        public Object postProcessBeforeInstantiation(Class<?> beanClass, String beanName) throws BeansException {
+            if(ObjectUtils.nullSafeEquals("superUser",beanName)&&SuperUser.class.equals(beanClass)){
+                return new SuperUser();
+            }
+            return null;
+        }
+
+        @Override
+        public boolean postProcessAfterInstantiation(Object bean, String beanName) throws BeansException {
+            if(ObjectUtils.nullSafeEquals("user",beanName) && User.class.equals(bean.getClass())){
+                //"user"对象不允许属性赋值（配置元数据->对象属性）
+                User user = (User)bean;
+                user.setId(2L);
+                user.setName("mercy");
+                return false;
+            }
+            return true;
+        }
     }
 }
