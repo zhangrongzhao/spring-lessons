@@ -11,4 +11,6 @@
             <property name="description" value="the user holder"></property>
       </bean>
 
+      <bean class="org.geekbang.thinking.in.spring.bean.lifecycle.MyInstantiationAwareBeanPostProcessor"></bean>
+
 </beans>
