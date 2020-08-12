@@ -13,6 +13,16 @@
     <packaging>war</packaging>
 
     <dependencies>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-webmvc</artifactId>
+            <version>${spring.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-webflux</artifactId>
+            <version>${spring.version}</version>
+        </dependency>
         <!--使用Servlet 3.1 API-->
         <dependency>
             <groupId>javax.servlet</groupId>
