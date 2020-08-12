@@ -54,7 +54,7 @@ class MyInstantiationAwareBeanPostProcessor implements InstantiationAwareBeanPos
                propertyValues.addPropertyValue("description","The user holder:v2");
            }
            //原始属性：<property name="description" value="the user holder"></property>
-
+           System.out.println("postProcessProperties()=The user holder:v2");
            return propertyValues;
        }
        return null;
@@ -67,6 +67,7 @@ class MyInstantiationAwareBeanPostProcessor implements InstantiationAwareBeanPos
            UserHolder userHolder=(UserHolder)bean;
            //UserHolder description: The user holder:v2
            userHolder.setDescription("The user holder:v3");
+           System.out.println("postProcessBeforeInitialization()="+userHolder.getDescription());
        }
        return bean;
     }

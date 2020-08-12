@@ -5,9 +5,12 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
                            http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
 
-      <bean id="userHolder" class="org.geekbang.thinking.in.spring.bean.lifecycle.UserHolder" autowire="constructor">
+      <bean id="userHolder"
+            class="org.geekbang.thinking.in.spring.bean.lifecycle.UserHolder"
+            autowire="constructor"
+            init-method="customInitMethod">
             <!--通过xml元素配置-->
-<!--            <property name="number" value="1"></property>-->
+            <!--<property name="number" value="1"></property>-->
             <property name="description" value="the user holder"></property>
       </bean>
 </beans>

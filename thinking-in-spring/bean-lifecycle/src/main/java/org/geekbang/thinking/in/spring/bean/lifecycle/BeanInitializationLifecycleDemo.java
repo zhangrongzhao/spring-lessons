@@ -2,6 +2,7 @@ package org.geekbang.thinking.in.spring.bean.lifecycle;
 
 import org.springframework.beans.factory.support.DefaultListableBeanFactory;
 import org.springframework.beans.factory.xml.XmlBeanDefinitionReader;
+import org.springframework.context.annotation.CommonAnnotationBeanPostProcessor;
 
 /**
 *   Bean 初始化 Demo
@@ -15,6 +16,8 @@ public class BeanInitializationLifecycleDemo {
         DefaultListableBeanFactory beanFactory = new DefaultListableBeanFactory();
         //添加MyInstantiationAwareBeanPostProcessor实现InstantiationAwareBeanPostProcessor
         beanFactory.addBeanPostProcessor(new MyInstantiationAwareBeanPostProcessor());
+        //添加CommonAnnotationBeanPostProcessor来处理@PostConstruct
+        beanFactory.addBeanPostProcessor(new CommonAnnotationBeanPostProcessor());
 
         String[] locations = {"/META-INF/dependency-lookup-context.xml", "META-INF/bean-initialization.xml"};
         XmlBeanDefinitionReader beanDefinitionReader=new XmlBeanDefinitionReader(beanFactory);
