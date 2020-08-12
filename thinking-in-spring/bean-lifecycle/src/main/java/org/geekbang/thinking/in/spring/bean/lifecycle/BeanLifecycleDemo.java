@@ -5,14 +5,10 @@ import org.springframework.beans.factory.xml.XmlBeanDefinitionReader;
 import org.springframework.context.annotation.CommonAnnotationBeanPostProcessor;
 
 /**
-*   Bean 初始化 Demo
-* */
-public class BeanInitializationLifecycleDemo {
+ * Bean生命周期示例
+ * */
+public class BeanLifecycleDemo {
     public static void main(String[] args){
-        executeBeanFactory();
-    }
-
-    public static void executeBeanFactory(){
         DefaultListableBeanFactory beanFactory = new DefaultListableBeanFactory();
         //添加MyInstantiationAwareBeanPostProcessor实现InstantiationAwareBeanPostProcessor
         beanFactory.addBeanPostProcessor(new MyInstantiationAwareBeanPostProcessor());
@@ -43,8 +39,13 @@ public class BeanInitializationLifecycleDemo {
 
         //构造器注入按照类型注入，resolveDependency
         UserHolder userholder = beanFactory.getBean("userHolder", UserHolder.class);
+        System.out.println(userholder);
 
+
+        //执行Bean销毁(容器内销毁，并不代表java进程内销毁，即不代表被垃圾回收啦。)
+        beanFactory.destroyBean("userHolder",userholder);
+
+        //Bean销毁并不意味着垃圾回收
         System.out.println(userholder);
     }
-
 }

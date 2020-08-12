@@ -12,7 +12,7 @@ import javax.annotation.PostConstruct;
 /**
  * User holder 类
  * */
-public class UserHolder implements InitializingBean, BeanNameAware, BeanClassLoaderAware, BeanFactoryAware, EnvironmentAware {
+public class UserHolder implements InitializingBean, BeanNameAware, BeanClassLoaderAware, BeanFactoryAware, EnvironmentAware,SmartInitializingSingleton {
     private User user;
     private Integer number;
     private String description;
@@ -95,5 +95,12 @@ public class UserHolder implements InitializingBean, BeanNameAware, BeanClassLoa
         //InitializingBean.afterPropertiesSet():v5->v6
          this.setDescription("The user description:v6");
          System.out.println("customInitMethod()="+this.getDescription());
+    }
+
+    @Override
+    public void afterSingletonsInstantiated() {
+        //postProcessAfterInitialization:v7->afterSingletonsInstantiated:v8
+        this.setDescription("The user description:v8");
+        System.out.println("afterSingletonsInstantiated()="+this.getDescription());
     }
 }
