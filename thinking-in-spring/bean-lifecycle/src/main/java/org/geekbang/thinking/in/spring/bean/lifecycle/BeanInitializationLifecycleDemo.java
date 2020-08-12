@@ -21,7 +21,7 @@ public class BeanInitializationLifecycleDemo {
         //添加MyDestructionAwareBeanPostProcessor
         beanFactory.addBeanPostProcessor(new MyDestructionAwareBeanPostProcessor());
 
-        String[] locations = {"/META-INF/dependency-lookup-context.xml", "META-INF/bean-initialization.xml"};
+        String[] locations = {"/META-INF/dependency-lookup-context.xml", "META-INF/bean-lifecycle.xml"};
         XmlBeanDefinitionReader beanDefinitionReader=new XmlBeanDefinitionReader(beanFactory);
         beanDefinitionReader.loadBeanDefinitions(locations);
 

@@ -12,12 +12,13 @@ public class BeanLifecycleDemo {
         DefaultListableBeanFactory beanFactory = new DefaultListableBeanFactory();
         //添加MyInstantiationAwareBeanPostProcessor实现InstantiationAwareBeanPostProcessor
         beanFactory.addBeanPostProcessor(new MyInstantiationAwareBeanPostProcessor());
-        //添加CommonAnnotationBeanPostProcessor来处理@PostConstruct
-        beanFactory.addBeanPostProcessor(new CommonAnnotationBeanPostProcessor());
         //添加MyDestructionAwareBeanPostProcessor
         beanFactory.addBeanPostProcessor(new MyDestructionAwareBeanPostProcessor());
+        //添加CommonAnnotationBeanPostProcessor来处理@PostConstruct
+        beanFactory.addBeanPostProcessor(new CommonAnnotationBeanPostProcessor());
 
-        String[] locations = {"/META-INF/dependency-lookup-context.xml", "META-INF/bean-initialization.xml"};
+
+        String[] locations = {"/META-INF/dependency-lookup-context.xml", "META-INF/bean-lifecycle.xml"};
         XmlBeanDefinitionReader beanDefinitionReader=new XmlBeanDefinitionReader(beanFactory);
         beanDefinitionReader.loadBeanDefinitions(locations);
 

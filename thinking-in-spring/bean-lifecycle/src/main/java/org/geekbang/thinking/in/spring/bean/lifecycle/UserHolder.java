@@ -8,11 +8,20 @@ import org.springframework.context.EnvironmentAware;
 import org.springframework.core.env.Environment;
 
 import javax.annotation.PostConstruct;
+import javax.annotation.PreDestroy;
 
 /**
  * User holder 类
  * */
-public class UserHolder implements InitializingBean, BeanNameAware, BeanClassLoaderAware, BeanFactoryAware, EnvironmentAware,SmartInitializingSingleton {
+public class UserHolder implements
+        InitializingBean,
+        BeanNameAware,
+        BeanClassLoaderAware,
+        BeanFactoryAware,
+        EnvironmentAware,
+        SmartInitializingSingleton,
+        DisposableBean
+{
     private User user;
     private Integer number;
     private String description;
@@ -102,5 +111,28 @@ public class UserHolder implements InitializingBean, BeanNameAware, BeanClassLoa
         //postProcessAfterInitialization:v7->afterSingletonsInstantiated:v8
         this.setDescription("The user description:v8");
         System.out.println("afterSingletonsInstantiated()="+this.getDescription());
+    }
+
+    @PreDestroy
+    public void preDestroy(){
+        //postProcessBeforeDestruction(): the user holder description:v9->preDestroy():v10
+        this.setDescription("the user holder:v10");
+        System.out.println("preDestroy()="+this.getDescription());
+        System.out.println(this);
+    }
+
+    @Override
+    public void destroy() throws Exception {
+        //preDestroy(): the user holder description:v10->destroy():v11
+        this.setDescription("the user holder:v11");
+        System.out.println("destroy()="+this.getDescription());
+        System.out.println(this);
+    }
+
+    public void customDestroyMethod(){
+        //destroy(): the user holder description:v11->customDestroyMethod():v12
+        this.setDescription("the user holder:v12");
+        System.out.println("customDestroyMethod()="+this.getDescription());
+        System.out.println(this);
     }
 }

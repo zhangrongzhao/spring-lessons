@@ -17,6 +17,7 @@ public class MyDestructionAwareBeanPostProcessor implements DestructionAwareBean
             //user holder description ="the user holder v"
             userHolder.setDescription("the user holder:v9");
             System.out.println("postProcessBeforeDestruction()="+userHolder.getDescription());
+            System.out.println(userHolder);
         }
     }
 }
