@@ -135,4 +135,8 @@ public class UserHolder implements
         System.out.println("customDestroyMethod()="+this.getDescription());
         System.out.println(this);
     }
+
+    protected void finalize() throws Throwable {
+        System.out.println("the user holder is finalized...");
+    }
 }

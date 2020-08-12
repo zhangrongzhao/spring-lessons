@@ -8,7 +8,7 @@ import org.springframework.context.annotation.CommonAnnotationBeanPostProcessor;
  * Bean生命周期示例
  * */
 public class BeanLifecycleDemo {
-    public static void main(String[] args){
+    public static void main(String[] args) throws InterruptedException {
         DefaultListableBeanFactory beanFactory = new DefaultListableBeanFactory();
         //添加MyInstantiationAwareBeanPostProcessor实现InstantiationAwareBeanPostProcessor
         beanFactory.addBeanPostProcessor(new MyInstantiationAwareBeanPostProcessor());
@@ -48,5 +48,15 @@ public class BeanLifecycleDemo {
 
         //Bean销毁并不意味着垃圾回收
         System.out.println(userholder);
+
+        //销毁BeanFactory 中的单例Bean
+        beanFactory.destroySingletons();
+
+        //强制GC
+        System.gc();
+
+        Thread.sleep(5000);
+
+        System.gc();
     }
 }
