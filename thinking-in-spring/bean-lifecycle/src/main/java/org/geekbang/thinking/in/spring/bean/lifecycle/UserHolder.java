@@ -136,6 +136,7 @@ public class UserHolder implements
         System.out.println(this);
     }
 
+    @Override
     protected void finalize() throws Throwable {
         System.out.println("the user holder is finalized...");
     }

@@ -17,7 +17,6 @@ public class BeanLifecycleDemo {
         //添加CommonAnnotationBeanPostProcessor来处理@PostConstruct
         beanFactory.addBeanPostProcessor(new CommonAnnotationBeanPostProcessor());
 
-
         String[] locations = {"/META-INF/dependency-lookup-context.xml", "META-INF/bean-lifecycle.xml"};
         XmlBeanDefinitionReader beanDefinitionReader=new XmlBeanDefinitionReader(beanFactory);
         beanDefinitionReader.loadBeanDefinitions(locations);
@@ -55,8 +54,10 @@ public class BeanLifecycleDemo {
         //强制GC
         System.gc();
 
-        Thread.sleep(5000);
+        Thread.sleep(1000*10);
 
         System.gc();
+
+        System.out.println("==============================================================");
     }
 }
