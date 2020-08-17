@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:users="http://time.geekbang.org/schema/users"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+                           http://www.springframework.org/schema/beans/spring-beans.xsd
+                           http://time.geekbang.org/schema/users
+                           http://time.geekbang.org/schema/users.xsd">
         <!--
         <bean id="user"  class="org.geekbang.thinking.in.spring.ioc.overview.dependency.domain.User">
             <property name="id" value="1"></property>
@@ -19,4 +23,5 @@
         </bean>
         -->
 
+        <users:user id="1" name="小马哥" city="BEIJING"></users:user>
 </beans>
