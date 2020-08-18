@@ -15,7 +15,7 @@
 
     <!--定义city类型（简单类型，枚举）-->
     <xsd:simpleType name="city">
-        <xsd:restriction>
+        <xsd:restriction base="xsd:string">
             <xsd:enumeration value="BEIJING"></xsd:enumeration>
             <xsd:enumeration value="SHANGHAI"></xsd:enumeration>
             <xsd:enumeration value="HANGZHOU"></xsd:enumeration>
