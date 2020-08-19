@@ -29,8 +29,7 @@ public class CustomizedResourcePatternResolverDemo {
         Resource[] resources = resourcePatternResolver.getResources(locationPattern);
         Stream.of(resources).map(ResourceUtils::getContent).forEach(System.out::print);
     }
-
-   static class JavaFilePathMatcher implements PathMatcher{
+    static class JavaFilePathMatcher implements PathMatcher{
 
         @Override
         public boolean isPattern(String path) {
