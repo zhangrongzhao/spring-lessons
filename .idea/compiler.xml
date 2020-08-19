@@ -12,6 +12,7 @@
         <module name="ioc-container-overview" />
         <module name="dependency-lookup" />
         <module name="configuration-metadata" />
+        <module name="resource" />
         <module name="bean-scope" />
         <module name="bean-lifecycle" />
       </profile>
@@ -24,6 +25,7 @@
       <module name="dependency-lookup" target="11" />
       <module name="dependency-source" target="11" />
       <module name="ioc-container-overview" target="11" />
+      <module name="resource" target="11" />
       <module name="spring-bean" target="11" />
       <module name="thinking-in-spring" target="11" />
     </bytecodeTargetLevel>
