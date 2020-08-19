@@ -19,12 +19,10 @@ import java.io.Reader;
  * */
 public class EncodedFileSystemResourceDemo {
     public static void main(String[] args) throws IOException {
-
         String currentJavaFilePath = System.getProperty("user.dir") + "/thinking-in-spring/resource/src/main/java/org/geekbang/thinking/in/spring/resource/EncodedFileSystemResourceDemo.java";
         File currentJavaFile = new File(currentJavaFilePath);
-        //System.out.println(currentJavaFilePath);
         //FileSystemResource=>WritableResource=>Resource
-        FileSystemResource fileSystemResource = new FileSystemResource(currentJavaFilePath);
+        FileSystemResource fileSystemResource = new FileSystemResource(currentJavaFile);
         EncodedResource encodedResource = new EncodedResource(fileSystemResource,"utf-8");
         //字符流读取inputStream
         Reader reader = encodedResource.getReader();
