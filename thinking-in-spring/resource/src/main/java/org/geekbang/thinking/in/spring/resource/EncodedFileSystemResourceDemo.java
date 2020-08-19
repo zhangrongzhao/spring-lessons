@@ -3,9 +3,7 @@ package org.geekbang.thinking.in.spring.resource;
 import org.apache.commons.io.IOUtils;
 import org.springframework.core.io.FileSystemResource;
 import org.springframework.core.io.support.EncodedResource;
-import org.springframework.util.StreamUtils;
 
-import java.io.CharArrayWriter;
 import java.io.File;
 import java.io.IOException;
 import java.io.Reader;
@@ -25,7 +23,8 @@ public class EncodedFileSystemResourceDemo {
         FileSystemResource fileSystemResource = new FileSystemResource(currentJavaFile);
         EncodedResource encodedResource = new EncodedResource(fileSystemResource,"utf-8");
         //字符流读取inputStream
-        Reader reader = encodedResource.getReader();
-        System.out.println(IOUtils.toString(reader));
+        try(Reader reader = encodedResource.getReader()){
+            System.out.println(IOUtils.toString(reader));
+        }
     }
 }
