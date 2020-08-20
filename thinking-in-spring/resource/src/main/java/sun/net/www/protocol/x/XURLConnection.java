@@ -1,7 +1,6 @@
 package sun.net.www.protocol.x;
 
 import org.springframework.core.io.ClassPathResource;
-import org.springframework.core.io.UrlResource;
 
 import java.io.IOException;
 import java.io.InputStream;

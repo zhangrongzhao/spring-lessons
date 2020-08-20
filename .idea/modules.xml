@@ -8,6 +8,7 @@
       <module fileurl="file://$PROJECT_DIR$/thinking-in-spring/dependency-injection/dependency-injection.iml" filepath="$PROJECT_DIR$/thinking-in-spring/dependency-injection/dependency-injection.iml" />
       <module fileurl="file://$PROJECT_DIR$/thinking-in-spring/dependency-lookup/dependency-lookup.iml" filepath="$PROJECT_DIR$/thinking-in-spring/dependency-lookup/dependency-lookup.iml" />
       <module fileurl="file://$PROJECT_DIR$/thinking-in-spring/dependency-source/dependency-source.iml" filepath="$PROJECT_DIR$/thinking-in-spring/dependency-source/dependency-source.iml" />
+      <module fileurl="file://$PROJECT_DIR$/thinking-in-spring/i18n/i18n.iml" filepath="$PROJECT_DIR$/thinking-in-spring/i18n/i18n.iml" />
       <module fileurl="file://$PROJECT_DIR$/thinking-in-spring/ioc-container-overview/ioc-container-overview.iml" filepath="$PROJECT_DIR$/thinking-in-spring/ioc-container-overview/ioc-container-overview.iml" />
       <module fileurl="file://$PROJECT_DIR$/thinking-in-spring/resource/resource.iml" filepath="$PROJECT_DIR$/thinking-in-spring/resource/resource.iml" />
       <module fileurl="file://$PROJECT_DIR$/thinking-in-spring/spring-bean/spring-bean.iml" filepath="$PROJECT_DIR$/thinking-in-spring/spring-bean/spring-bean.iml" />
