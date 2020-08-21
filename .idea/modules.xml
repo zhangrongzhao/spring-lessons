@@ -14,6 +14,7 @@
       <module fileurl="file://$PROJECT_DIR$/thinking-in-spring/spring-bean/spring-bean.iml" filepath="$PROJECT_DIR$/thinking-in-spring/spring-bean/spring-bean.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/spring-lessons.iml" filepath="$PROJECT_DIR$/.idea/spring-lessons.iml" />
       <module fileurl="file://$PROJECT_DIR$/thinking-in-spring/thinking-in-spring.iml" filepath="$PROJECT_DIR$/thinking-in-spring/thinking-in-spring.iml" />
+      <module fileurl="file://$PROJECT_DIR$/thinking-in-spring/validation/validation.iml" filepath="$PROJECT_DIR$/thinking-in-spring/validation/validation.iml" />
     </modules>
   </component>
 </project>

@@ -8,9 +8,10 @@
         <outputRelativeToContentRoot value="true" />
         <module name="dependency-injection" />
         <module name="spring-bean" />
-        <module name="dependency-source" />
-        <module name="ioc-container-overview" />
         <module name="i18n" />
+        <module name="ioc-container-overview" />
+        <module name="validation" />
+        <module name="dependency-source" />
         <module name="dependency-lookup" />
         <module name="configuration-metadata" />
         <module name="resource" />
@@ -30,6 +31,7 @@
       <module name="resource" target="11" />
       <module name="spring-bean" target="11" />
       <module name="thinking-in-spring" target="11" />
+      <module name="validation" target="11" />
     </bytecodeTargetLevel>
   </component>
 </project>
