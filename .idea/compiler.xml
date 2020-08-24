@@ -7,14 +7,15 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="dependency-injection" />
+        <module name="configuration-metadata" />
         <module name="spring-bean" />
         <module name="i18n" />
         <module name="ioc-container-overview" />
         <module name="validation" />
         <module name="dependency-source" />
-        <module name="data-binding" />
+        <module name="conversion" />
         <module name="dependency-lookup" />
-        <module name="configuration-metadata" />
+        <module name="data-binding" />
         <module name="resource" />
         <module name="bean-scope" />
         <module name="bean-lifecycle" />
@@ -24,6 +25,7 @@
       <module name="bean-lifecycle" target="11" />
       <module name="bean-scope" target="11" />
       <module name="configuration-metadata" target="11" />
+      <module name="conversion" target="11" />
       <module name="data-binding" target="11" />
       <module name="dependency-injection" target="11" />
       <module name="dependency-lookup" target="11" />

@@ -1,6 +1,5 @@
 package org.geekbang.thinking.in.spring.data.binding;
 
-import org.geekbang.thinking.in.spring.ioc.overview.dependency.domain.Company;
 import org.geekbang.thinking.in.spring.ioc.overview.dependency.domain.User;
 import org.springframework.beans.MutablePropertyValues;
 import org.springframework.beans.PropertyValue;
