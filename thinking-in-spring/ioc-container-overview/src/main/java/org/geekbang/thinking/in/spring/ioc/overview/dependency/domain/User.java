@@ -17,6 +17,14 @@ public class User implements InitializingBean, DisposableBean, BeanNameAware {
     private City[] workCities;
     private List<City> lifeCities;
     private transient String beanName;
+    private Company company;
+
+    public Company getCompany() {
+        return company;
+    }
+    public void setCompany(Company company) {
+        this.company = company;
+    }
 
     public List<City> getLifeCities() {
         return lifeCities;
@@ -69,18 +77,6 @@ public class User implements InitializingBean, DisposableBean, BeanNameAware {
     }
 
 
-    @Override
-    public String toString() {
-        return "User{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", city=" + city +
-                ", configFileLocation=" + configFileLocation +
-                ", workCities=" + Arrays.toString(workCities) +
-                ", lifeCities=" + lifeCities +
-                '}';
-    }
-
 //    @PostConstruct
 //    public void init(){
 //        System.out.println("用户对象初始化...");
@@ -103,5 +99,19 @@ public class User implements InitializingBean, DisposableBean, BeanNameAware {
     }
     public String getBeanName() {
         return beanName;
+    }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", city=" + city +
+                ", configFileLocation=" + configFileLocation +
+                ", workCities=" + Arrays.toString(workCities) +
+                ", lifeCities=" + lifeCities +
+                ", beanName='" + beanName + '\'' +
+                ", company=" + company +
+                '}';
     }
 }

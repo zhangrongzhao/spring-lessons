@@ -12,6 +12,7 @@
         <module name="ioc-container-overview" />
         <module name="validation" />
         <module name="dependency-source" />
+        <module name="data-binding" />
         <module name="dependency-lookup" />
         <module name="configuration-metadata" />
         <module name="resource" />
@@ -23,6 +24,7 @@
       <module name="bean-lifecycle" target="11" />
       <module name="bean-scope" target="11" />
       <module name="configuration-metadata" target="11" />
+      <module name="data-binding" target="11" />
       <module name="dependency-injection" target="11" />
       <module name="dependency-lookup" target="11" />
       <module name="dependency-source" target="11" />
