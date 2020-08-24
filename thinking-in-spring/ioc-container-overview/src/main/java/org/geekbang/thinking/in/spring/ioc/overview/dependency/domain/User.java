@@ -8,6 +8,7 @@ import org.springframework.core.io.Resource;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.Properties;
 
 public class User implements InitializingBean, DisposableBean, BeanNameAware {
     private Long id;
@@ -18,6 +19,14 @@ public class User implements InitializingBean, DisposableBean, BeanNameAware {
     private List<City> lifeCities;
     private transient String beanName;
     private Company company;
+    private Properties context;
+
+    public Properties getContext() {
+        return context;
+    }
+    public void setContext(Properties context) {
+        this.context = context;
+    }
 
     public Company getCompany() {
         return company;
@@ -76,7 +85,6 @@ public class User implements InitializingBean, DisposableBean, BeanNameAware {
         return newUser;
     }
 
-
 //    @PostConstruct
 //    public void init(){
 //        System.out.println("用户对象初始化...");
@@ -86,7 +94,6 @@ public class User implements InitializingBean, DisposableBean, BeanNameAware {
     public void afterPropertiesSet() throws Exception {
         System.out.println("user bean["+this.beanName+"]初始化...");
     }
-
 
     @Override
     public void destroy(){
@@ -101,6 +108,7 @@ public class User implements InitializingBean, DisposableBean, BeanNameAware {
         return beanName;
     }
 
+
     @Override
     public String toString() {
         return "User{" +
@@ -112,6 +120,7 @@ public class User implements InitializingBean, DisposableBean, BeanNameAware {
                 ", lifeCities=" + lifeCities +
                 ", beanName='" + beanName + '\'' +
                 ", company=" + company +
+                ", context=" + context +
                 '}';
     }
 }
