@@ -20,6 +20,14 @@ public class User implements InitializingBean, DisposableBean, BeanNameAware {
     private transient String beanName;
     private Company company;
     private Properties context;
+    private String contextAsText;
+
+    public String getContextAsText() {
+        return contextAsText;
+    }
+    public void setContextAsText(String contextAsText) {
+        this.contextAsText = contextAsText;
+    }
 
     public Properties getContext() {
         return context;
@@ -108,7 +116,6 @@ public class User implements InitializingBean, DisposableBean, BeanNameAware {
         return beanName;
     }
 
-
     @Override
     public String toString() {
         return "User{" +
@@ -121,6 +128,7 @@ public class User implements InitializingBean, DisposableBean, BeanNameAware {
                 ", beanName='" + beanName + '\'' +
                 ", company=" + company +
                 ", context=" + context +
+                ", contextAsText='" + contextAsText + '\'' +
                 '}';
     }
 }
