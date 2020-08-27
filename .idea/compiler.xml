@@ -9,6 +9,7 @@
         <module name="conversion" />
         <module name="ioc-container-overview" />
         <module name="dependency-source" />
+        <module name="event" />
         <module name="bean-scope" />
         <module name="i18n" />
         <module name="bean-lifecycle" />
@@ -31,6 +32,7 @@
       <module name="dependency-injection" target="11" />
       <module name="dependency-lookup" target="11" />
       <module name="dependency-source" target="11" />
+      <module name="event" target="11" />
       <module name="generic" target="11" />
       <module name="i18n" target="11" />
       <module name="ioc-container-overview" target="11" />
