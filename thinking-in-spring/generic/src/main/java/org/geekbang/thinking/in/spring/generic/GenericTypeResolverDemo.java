@@ -6,10 +6,10 @@ import java.lang.reflect.Method;
 import java.lang.reflect.Type;
 import java.lang.reflect.TypeVariable;
 import java.util.ArrayList;
-import java.util.List;
 import java.util.Map;
 
-import static org.springframework.core.GenericTypeResolver.*;
+import static org.springframework.core.GenericTypeResolver.resolveReturnType;
+import static org.springframework.core.GenericTypeResolver.resolveReturnTypeArgument;
 
 /**
  * {@link  GenericTypeResolver}示例
