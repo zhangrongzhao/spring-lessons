@@ -2,7 +2,6 @@ package org.geekbang.thinking.in.spring.conversion;
 
 import org.geekbang.thinking.in.spring.ioc.overview.dependency.domain.User;
 import org.springframework.context.ConfigurableApplicationContext;
-import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import java.beans.PropertyEditor;
