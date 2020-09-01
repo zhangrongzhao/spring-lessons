@@ -1,6 +1,5 @@
 package org.geekbang.thinking.in.spring.event;
 
-import org.springframework.context.ApplicationEvent;
 import org.springframework.context.ApplicationListener;
 
 /**
