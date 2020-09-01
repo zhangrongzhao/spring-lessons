@@ -12,6 +12,11 @@ import javax.annotation.PostConstruct;
 /**
  * 依赖注入事件发布器示例
  * @see ApplicationEvent
+ * @see ApplicationEventPublisher
+ * @see ApplicationEventPublisherAware
+ * @see ApplicationListener
+ * @see ApplicationContext
+ * @see BeanPostProcessor
  * **/
 public class InjectingApplicationEventPublisherDemo implements ApplicationEventPublisherAware, ApplicationContextAware, BeanPostProcessor {
 
@@ -36,8 +41,6 @@ public class InjectingApplicationEventPublisherDemo implements ApplicationEventP
         context.register(InjectingApplicationEventPublisherDemo.class);
 
         context.refresh();
-        //context.publishEvent(new MySpringEvent("hello,world"));
-
         context.close();
     }
 
