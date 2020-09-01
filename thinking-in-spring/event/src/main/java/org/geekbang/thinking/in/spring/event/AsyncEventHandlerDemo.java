@@ -1,6 +1,5 @@
 package org.geekbang.thinking.in.spring.event;
 
-import org.springframework.context.ApplicationEvent;
 import org.springframework.context.ApplicationListener;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.event.ApplicationEventMulticaster;
@@ -42,7 +41,7 @@ public class AsyncEventHandlerDemo {
                 }
             });
             simpleApplicationEventMulticaster.setErrorHandler(e -> {
-                System.out.println("当Spring事件异常时，原因：" + e.getMessage());
+                System.err.println("当Spring事件异常时，原因：" + e.getMessage());
             });
         }
 
