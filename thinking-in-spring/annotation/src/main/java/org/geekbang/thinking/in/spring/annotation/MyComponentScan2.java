@@ -28,4 +28,14 @@ public @interface MyComponentScan2 {
     // -> @AliasFor @ComponentScan.value 显性别名
 
 
+
+    /***
+     * 与元注解@MyComponentScan 同名属性
+     * */
+    String[] scanBasePackages() default {};
+
+
+    @AliasFor("scanBasePackages")
+    String[] packages() default {};//packages 覆盖scanBasePackages，元注解中的scanBasePackages
+
 }
