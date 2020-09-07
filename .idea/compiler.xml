@@ -6,11 +6,12 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="environment" />
         <module name="conversion" />
         <module name="annotation" />
         <module name="ioc-container-overview" />
-        <module name="resource" />
         <module name="dependency-source" />
+        <module name="bean-scope" />
         <module name="i18n" />
         <module name="bean-lifecycle" />
         <module name="spring-bean" />
@@ -21,7 +22,7 @@
         <module name="generic" />
         <module name="data-binding" />
         <module name="dependency-injection" />
-        <module name="bean-scope" />
+        <module name="resource" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel target="11">
@@ -34,6 +35,7 @@
       <module name="dependency-injection" target="11" />
       <module name="dependency-lookup" target="11" />
       <module name="dependency-source" target="11" />
+      <module name="environment" target="11" />
       <module name="event" target="11" />
       <module name="generic" target="11" />
       <module name="i18n" target="11" />
